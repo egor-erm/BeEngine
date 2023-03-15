@@ -151,7 +151,8 @@ public class Player extends EntityHuman implements InventoryHolder, CommandSende
 		startGamePacket.setItemEntries(ItemPalette.getItemEntries());
 
 		var movementSettings = new SyncedPlayerMovementSettings();
-		movementSettings.setMovementMode(AuthoritativeMovementMode.CLIENT);
+		movementSettings.setMovementMode(AuthoritativeMovementMode.SERVER);
+		movementSettings.setServerAuthoritativeBlockBreaking(true);
 
 		startGamePacket.setPlayerMovementSettings(movementSettings);
 		startGamePacket.setCommandsEnabled(true);
